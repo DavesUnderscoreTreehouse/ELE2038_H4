@@ -1,0 +1,45 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage{student}
+
+% Metadata
+\date{\today}
+\setmodule{ELE2038: Signals and Control}
+\setterm{Semester 2, 2025}
+
+%-------------------------------%
+% Other details
+\title{Assignment H4}
+\setmembername{David Thompson}
+\setmemberuid{40401559}
+
+%-------------------------------%
+% Commands and packages
+\usepackage{amsmath,amssymb,bm,physics,wrapfig}
+\usepackage[backend=biber, style=ieee]{biblatex}
+\addbibresource{ELE2038_H4.bib}
+\nocite{*}
+
+\newcommand{\KL}{\mathrm{KL}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\T}{\top}
+
+\newcommand{\expdist}[2]{%
+        \normalfont{\textsc{Exp}}(#1, #2)%
+    }
+\newcommand{\expparam}{\bm \lambda}
+\newcommand{\Expparam}{\bm \Lambda}
+\newcommand{\natparam}{\bm \eta}
+\newcommand{\Natparam}{\bm H}
+\newcommand{\sufstat}{\bm u}
+
+%-------------------------------%
+% Main document
+\begin{document}
+    \numberwithin{equation}{section}
+    % Add header
+    \header{}
+    \section{Problem 1} 
+
+    \printbibliography
+\end{document}
