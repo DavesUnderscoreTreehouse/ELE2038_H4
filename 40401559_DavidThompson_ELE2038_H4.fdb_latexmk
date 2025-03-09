@@ -1,16 +1,16 @@
 # Fdb version 4
-["biber 40401559_DavidThompson_ELE2038_H4"] 1741548565.08365 "40401559_DavidThompson_ELE2038_H4.bcf" "40401559_DavidThompson_ELE2038_H4.bbl" "40401559_DavidThompson_ELE2038_H4" 1741553596.09015 0
-  "40401559_DavidThompson_ELE2038_H4.bcf" 1741553595 107808 34c9696c0797cba6c259e9cf80fe2ca5 "pdflatex"
+["biber 40401559_DavidThompson_ELE2038_H4"] 1741548565.08365 "40401559_DavidThompson_ELE2038_H4.bcf" "40401559_DavidThompson_ELE2038_H4.bbl" "40401559_DavidThompson_ELE2038_H4" 1741555194.40685 0
+  "40401559_DavidThompson_ELE2038_H4.bcf" 1741555194 107808 34c9696c0797cba6c259e9cf80fe2ca5 "pdflatex"
   "ELE2038_H4.bib" 1741546087 200 9f05ed0024aa8a028327fae3b15af967 ""
   (generated)
   "40401559_DavidThompson_ELE2038_H4.bbl"
   "40401559_DavidThompson_ELE2038_H4.blg"
   (rewritten before read)
-["pdflatex"] 1741553594.64829 "c:/Users/davem/OneDrive - Queen's University Belfast/Documents/QUB/ELE2038_SignalsAndControl/H4/40401559_DavidThompson_ELE2038_H4.tex" "40401559_DavidThompson_ELE2038_H4.pdf" "40401559_DavidThompson_ELE2038_H4" 1741553596.09105 0
-  "40401559_DavidThompson_ELE2038_H4.aux" 1741553595 2305 da5bf5c4b2259b341dad98d073e20a57 "pdflatex"
+["pdflatex"] 1741555192.95157 "c:/Users/davem/OneDrive - Queen's University Belfast/Documents/QUB/ELE2038_SignalsAndControl/H4/40401559_DavidThompson_ELE2038_H4.tex" "40401559_DavidThompson_ELE2038_H4.pdf" "40401559_DavidThompson_ELE2038_H4" 1741555194.40765 0
+  "40401559_DavidThompson_ELE2038_H4.aux" 1741555194 2305 da5bf5c4b2259b341dad98d073e20a57 "pdflatex"
   "40401559_DavidThompson_ELE2038_H4.bbl" 1741548571 1760 49ffa6211de421690407ee3ac7d6b7f1 "biber 40401559_DavidThompson_ELE2038_H4"
-  "40401559_DavidThompson_ELE2038_H4.run.xml" 1741553595 2605 092fe715cad34f76ebf094575935fb8e "pdflatex"
-  "40401559_DavidThompson_ELE2038_H4.tex" 1741553140 6546 cb11b4a9eb57fdb8324141bb7dffd962 ""
+  "40401559_DavidThompson_ELE2038_H4.run.xml" 1741555194 2605 092fe715cad34f76ebf094575935fb8e "pdflatex"
+  "40401559_DavidThompson_ELE2038_H4.tex" 1741555183 6546 cb11b4a9eb57fdb8324141bb7dffd962 ""
   "C:/Users/davem/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1741430581 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/davem/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1737923669 12013393 ad1bbb059157eb74a1f14a4f7c713c37 ""
   "C:/Users/davem/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm" 1233951848 1120 1e8878807317373affa7f7bba4cf2f6a ""
@@ -168,10 +168,10 @@
   "C:/Users/davem/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
   "C:/Users/davem/AppData/Local/Programs/MiKTeX/tex/latex/zref/zref-abspage.sty" 1695383086 2269 4fe6fb3396214c91f164d45faf9bec45 ""
   "C:/Users/davem/AppData/Local/Programs/MiKTeX/tex/latex/zref/zref-base.sty" 1695383086 20785 f7d1133a287929598a897c93f8f4c44b ""
-  "c:/Users/davem/OneDrive - Queen's University Belfast/Documents/QUB/ELE2038_SignalsAndControl/H4/40401559_DavidThompson_ELE2038_H4.tex" 1741553140 6546 cb11b4a9eb57fdb8324141bb7dffd962 ""
-  "plots/zn1_Gcl.png" 1741553225 25840 9cc71c550a556de79cc7757a568cdabf ""
+  "c:/Users/davem/OneDrive - Queen's University Belfast/Documents/QUB/ELE2038_SignalsAndControl/H4/40401559_DavidThompson_ELE2038_H4.tex" 1741555183 6546 cb11b4a9eb57fdb8324141bb7dffd962 ""
+  "plots/zn1_Gcl.png" 1741553606 25840 9cc71c550a556de79cc7757a568cdabf ""
   "plots/zn1_stepRes+tangent.png" 1741553593 38796 fb46b24247c7e9bc7b9ae6d500a075b4 ""
-  "plots/znu_Gcl.png" 1741553111 24681 47e5a522d57db0b416a9df8cac3c1c06 ""
+  "plots/znu_Gcl.png" 1741555192 28209 c2deb712358a19c6359e482850fb38b8 ""
   "student.sty" 1741546088 2037 c02fd840ba99b479cb016833129ee3e7 ""
   (generated)
   "40401559_DavidThompson_ELE2038_H4.aux"
