@@ -40,6 +40,44 @@
     % Add header
     \header{}
     \section{Problem 1} 
+        A system with a transfer function
+        \begin{equation}
+            G(s) = \frac{s^3 + s^2 - 5s -1}{8s^5 + 38s^4 + 65s^3 + 50s^2 + 17s + 2},
+        \end{equation}
+        can be shown to be BIBO-stable through the use of Routh's criterion. Defining $G$ as $G(s) = \frac{P(s)}{Q(s)}$, we can take $Q$ as the characteristic polynomial and construct a Routh's tabulation using its coefficients as shown in Table \ref{tb:rouths_Q}. When tabulated, it can be seen that all values in the first column are positive, therefore, all roots of $Q$ have a negative real part, meaning $G$ is BIBO-stable. $G$ can also be shown to be "sufficiently stable" if all of its poles are more than $0.2$ from the imaginary axis. We can show this by constructing another Routh's tabulation with the coefficients of $Q(s - c)$ where $c$ is the distance from the axis, in this case, $0.2$. If all values in the first column are positive, the poles of $G(s)$ are more than $0.2$ from the imaginary axis. Using the binomial theorem to expand $Q(s-c)$ and calculate the coefficients, 
+        \begin{align}
+            Q(s + 0.2) &= 8(s + 0.2)^5 + 38(s + 0.2)^4 + 65(s + 0.2)^3 + 50(s + 0.2)^2 + 17(s + 0.2) + 2 \\
+            &= 8s^5 + 30s^4 + 37.8s^3 + 19.48s^2 + 3.648s + 0.138
+        \end{align}
+        Table \ref{tb:rouths_Qc} shows that this is the case, hence $G$ is BIBO-stable with all poles more than $0.2$ from the axis.
+        \begin{table}[h!]
+            \centering
+            \begin{tabular}{ c | c c c}
+                $s^5$ & 8     & 65    & 17 \\
+                $s^4$ & 38    & 50    & 2  \\
+                $s^3$ & 54.47 & 16.58 & 0  \\
+                $s^2$ & 38.43 & 2     & 0  \\
+                $s^1$ & 13.74 & 0     & 0  \\
+                $s^0$ & 2     & 0     & 0             
+            \end{tabular}
+            \caption{Routh's tabulation of $Q(s)$.}
+            \label{tb:rouths_Q}
+            \end{table}
+        \begin{table}[h!]
+            \centering
+            \begin{tabular}{ c | c c c}
+                $s^5$ & 8     & 37.80 & 3.648 \\
+                $s^4$ & 30    & 19.48 & 0.138 \\
+                $s^3$ & 32.61 & 3.611 & 0  \\
+                $s^2$ & 16.16 & 0.138 & 0  \\
+                $s^1$ & 3.332 & 0     & 0  \\
+                $s^0$ & 0.138 & 0     & 0             
+            \end{tabular}
+            \caption{Routh's tablulation of $Q(s + 0.2)$.}
+            \label{tb:rouths_Qc}
+            \end{table}
 
+        \section{Problem 2}
+        
     \printbibliography
 \end{document}
