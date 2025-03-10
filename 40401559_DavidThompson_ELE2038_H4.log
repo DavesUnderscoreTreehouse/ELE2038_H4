@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2025.1.26)  9 MAR 2025 21:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2025.1.26)  10 MAR 2025 01:54
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -802,9 +802,6 @@ Package pdftex.def Info: plots/zn1_Gcl.png  used on input line 109.
 [1
 
 {C:/Users/davem/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
-
-LaTeX Warning: Reference `znu_params' on page 2 undefined on input line 114.
-
 <plots/znu_Gcl.png, id=18, 415.5525pt x 328.8285pt>
 File: plots/znu_Gcl.png Graphic file (type png)
 <use plots/znu_Gcl.png>
@@ -814,31 +811,29 @@ Package pdftex.def Info: plots/znu_Gcl.png  used on input line 127.
 
 [2 <./plots/zn1_stepRes+tangent.png> <./plots/zn1_Gcl.png>]
 
-[3 <./plots/znu_Gcl.png>] (40401559_DavidThompson_ELE2038_H4.aux)
+[3 <./plots/znu_Gcl.png>]
+
+[4] (40401559_DavidThompson_ELE2038_H4.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 1
 L3 programming layer <2024-12-25>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
 Package logreq Info: Writing requests to '40401559_DavidThompson_ELE2038_H4.run.xml'.
 \openout1 = `40401559_DavidThompson_ELE2038_H4.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 24952 strings out of 473536
- 511757 string characters out of 5714956
- 1315181 words of memory out of 5000000
- 47801 multiletter control sequences out of 15000+600000
+ 24953 strings out of 473536
+ 511772 string characters out of 5714956
+ 1315236 words of memory out of 5000000
+ 47802 multiletter control sequences out of 15000+600000
  564849 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 131i,10n,135p,1044b,1135s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/davem/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/davem/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/davem/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/davem/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/davem/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/davem/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/davem/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/davem/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on 40401559_DavidThompson_ELE2038_H4.pdf (3 pages, 191094 bytes).
+ 131i,11n,135p,1044b,1137s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/davem/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/davem/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/davem/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/davem/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/davem/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/davem/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/davem/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/davem/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/davem/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/davem/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on 40401559_DavidThompson_ELE2038_H4.pdf (4 pages, 220128 bytes).
 PDF statistics:
- 62 PDF objects out of 1000 (max. 8388607)
+ 75 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  28 words of extra memory for PDF output out of 10000 (max. 10000000)
 

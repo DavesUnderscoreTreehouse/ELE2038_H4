@@ -111,7 +111,7 @@
             \label{fig:zn1_gcl}
         \end{figure}
     \subsection{Part (ii)}
-        Second, we will use the Ziegler-Nichols ultimate sensitivity method. We start by finding the ultimate gain through experimentation, then we find the ultimate period. From these values we can calculate the PID controller parameters which are stated in Table \ref{znu_params}.
+        Second, we will use the Ziegler-Nichols ultimate sensitivity method. We start by finding the ultimate gain through experimentation, then we find the ultimate period. From these values we can calculate the PID controller parameters which are stated in Table \ref{tb:znu_params}.
         \begin{table}[h]
             \centering
             \begin{tabular}{ c | c | c }
@@ -130,7 +130,45 @@
         \end{figure}
         
     \section{Problem 3}
-        
+        The impulse response of a linear dynamical system is 
+        \begin{equation}
+            x(t) = 5 \sin(at + \frac{\pi}{4})e^{-2t} + 0.02H_{0.05}(t)e^{-0.2(t-0.5)},
+        \end{equation}
+        for $t >= 0$, for some constant $a$. We can test this impulse response to determine if the system is stable by verifying if the impulse response is absolutely integrable. Both terms of the expression contain an exponential decay factor which ensures that they are absolutely integrable over $[0, \infty)$. We can further show this by setting up the integration
+        \begin{align}
+            x(t) =& \int_{0}^{\infty} \left|5 \sin(at + \frac{\pi}{4})e^{-2t}\right|dt 
+                + \int_{0}^{\infty} \left|0.02H_{0.05}(t)e^{-0.2(t-0.5)}\right|dt.
+            \intertext{Considering the first term, since $\left|\sin(x) \le 1\right|$,}
+            \implies & 5 \int_{0}^{\infty} e^{-2t}dt, \\
+            =& 5 \left[-\frac{1}{2}e^{-2t}\right]_0^\infty, \\
+            =& \frac{5}{2} < \infty.
+            \intertext{Then, considering the second term, applying the Heaviside function}
+            =& 0.02\int_{0.05}^{\infty} e^{-0.2(t-0.5)}dt,
+            \intertext{substituting $u=t-0.5$}
+            =& 0.02\int_{0}^{\infty} e^{-0.2u}du, \\
+            =& 0.02\left[-\frac{1}{0.2}e^{-0.2u}\right]_0^\infty, \\
+            =& 0.1 < \infty.
+        \end{align}
+        As both terms integrate to finite solutions, $x(t)$ is absolutely integrable and therefore the system is BIBO-stable.
 
+    \section{{Problem 4}}
+        A dynamical system with transfer function $G_s$, controlled by a PD controller with actuator and sensor transfer functions of $G_a = 1$ and $G_m = 1$ respectively, has a closed-loop transfer function, $G_{CL}$, of
+        \begin{equation}
+            G_{CL}(s) = \frac{K_C(1 + \tau_D s)G_s(s)}{1 + K_C (1 + \tau_D s) G_s(s)}.
+        \end{equation}
+        Where $K_C$ is the controller gain and $\tau_D$ is the time derivative constant. To find the offset of the system upon a step change of the set point, we can apply the final value theorem. We can do this as we can assume that $G_s$ is a proper rational function and is BIBO-stable, therefore all of its poles have a negative real part. Using a unit step input to model the change in set point; the output, $Y(s)$, would be
+        \begin{equation}
+            Y(s)=\frac{1}{s} \cdot G_{CL}(s).
+        \end{equation}
+        Therefore, applying the final value theorem and substituting $G_{CL}$
+        \begin{align}
+            \lim_{t \to \infty} y(t) =& \lim_{s \to 0} \frac{K_C (1 + \tau_D s) G_s(s)}{1 + K_C (1 + \tau_D s) G_s(s)},
+            \intertext{applying the limit}
+            \lim_{t \to \infty} y(t) =& \frac{K_C G_s(0)}{1 + K_C G_s(0)}. \label{eq:steadyState}
+        \end{align}
+        As $t$ approaches $\infty$, Equation (\ref{eq:steadyState}) equals the system's steady state value. As the offset is defined as the desired value, $1$, subtract the steady state value, Equation (\ref{eq:steadyState}), the offset is 
+        \begin{equation} \label{eq:offset}
+            \text{Offset} = 1 - \frac{K_C G_s(0)}{1 + K_C G_s(0)}.
+        \end{equation}
     \printbibliography
 \end{document}
