@@ -14,12 +14,19 @@
 
 %-------------------------------%
 % Commands and packages
-\usepackage{amsmath,amssymb,bm,physics,wrapfig}
+\usepackage{amsmath,amssymb,bm,physics,wrapfig,hyperref}
 \usepackage[backend=biber, style=ieee]{biblatex}
 \addbibresource{ELE2038_H4.bib}
 \nocite{*}
 
 \graphicspath{ {plots/} }
+
+\hypersetup{
+  colorlinks = true, %Colours links instead of ugly boxes
+  urlcolor   = blue, %Colour for external hyperlinks
+  linkcolor  = black, %Colour of internal links
+  citecolor  = black %Colour of citations
+}
 
 \newcommand{\KL}{\mathrm{KL}}
 \newcommand{\R}{\mathbb{R}}
@@ -39,6 +46,7 @@
 % Main document
 \begin{document}
     \numberwithin{equation}{section}
+    \numberwithin{table}{section}
     % Add header
     \header{}
     \section{Problem 1} 
@@ -46,7 +54,7 @@
         \begin{equation}
             G(s) = \frac{s^3 + s^2 - 5s -1}{8s^5 + 38s^4 + 65s^3 + 50s^2 + 17s + 2},
         \end{equation}
-        can be shown to be BIBO-stable through the use of Routh's criterion. Defining $G$ as $G(s) = \frac{P(s)}{Q(s)}$, we can take $Q$ as the characteristic polynomial and construct a Routh's tabulation using its coefficients as shown in Table \ref{tb:rouths_Q}. When tabulated, it can be seen that all values in the first column are positive, therefore, all roots of $Q$ have a negative real part, meaning $G$ is BIBO-stable. $G$ can also be shown to be "sufficiently stable" if all of its poles are more than $0.2$ from the imaginary axis. We can show this by constructing another Routh's tabulation with the coefficients of $Q(s - c)$ where $c$ is the distance from the axis, in this case, $0.2$. If all values in the first column are positive, the poles of $G(s)$ are more than $0.2$ from the imaginary axis. Using the binomial theorem to expand $Q(s-c)$ and calculate the coefficients, 
+        can be shown to be BIBO-stable through the use of Routh's criterion. Defining $G$ as $G(s) = P(s) / Q(s)$, we can take $Q$ as the characteristic polynomial and construct a Routh's tabulation using its coefficients as shown in Table \ref{tb:rouths_Q}. When tabulated, it can be seen that all values in the first column are positive, therefore, all roots of $Q$ have a negative real part, meaning $G$ is BIBO-stable. $G$ can also be shown to be "sufficiently stable" if all of its poles are more than $0.2$ from the imaginary axis. We can show this by constructing another Routh's tabulation with the coefficients of $Q(s - c)$ where $c$ is the distance from the axis, in this case, $0.2$. If all values in the first column are positive, the poles of $G(s)$ are more than $0.2$ from the imaginary axis. Using the binomial theorem to expand $Q(s-c)$ and calculate the coefficients, 
         \begin{align}
             Q(s + 0.2) &= 8(s + 0.2)^5 + 38(s + 0.2)^4 + 65(s + 0.2)^3 + 50(s + 0.2)^2 + 17(s + 0.2) + 2 \\
             &= 8s^5 + 30s^4 + 37.8s^3 + 19.48s^2 + 3.648s + 0.138
@@ -93,7 +101,7 @@
             \caption{A plot of the step response of $G$ and a tangent to the curve at the inflection point.}
             \label{fig:zn1_tangent}
         \end{figure}
-        We can then find the values required to calculate the tuning parameters given the two intersection points marked in Figure \ref{fig:zn1_tangent}. The resulting PID parameters are stated in Table \ref{tb:zn1_params} below.
+        We can then find the values required to calculate the tuning parameters given the two intersection points marked in Figure \ref{fig:zn1_tangent}. The resulting PID parameters are calculated, \cite[][Table 10.2]{sopaskis_2023_control}, and stated in Table \ref{tb:zn1_params} below.
         \begin{table}[h]
             \centering
             \begin{tabular}{ c | c | c }
@@ -111,7 +119,7 @@
             \label{fig:zn1_gcl}
         \end{figure}
     \subsection{Part (ii)}
-        Second, we will use the Ziegler-Nichols ultimate sensitivity method. We start by finding the ultimate gain through experimentation, then we find the ultimate period. From these values we can calculate the PID controller parameters which are stated in Table \ref{tb:znu_params}.
+        Second, we will use the Ziegler-Nichols ultimate sensitivity method. We start by finding the ultimate gain through experimentation, then we find the ultimate period. From these values we can calculate the PID controller parameters given the formulas \cite[][Table 10.3]{sopaskis_2023_control}, the resulting values are stated in Table \ref{tb:znu_params}.
         \begin{table}[h]
             \centering
             \begin{tabular}{ c | c | c }
@@ -128,7 +136,8 @@
             \caption{A plot of the step response of $G_{cl}$ tuned using the Ziegler-Nichols ultimate sensitivity method.}
             \label{fig:znu_gcl}
         \end{figure}
-        
+        All code used to calculate these values and generate the above plots can be found on GitHub \href{https://github.com/DavesUnderscoreTreehouse/ELE2038_H4}{here}.
+
     \section{Problem 3}
         The impulse response of a linear dynamical system is 
         \begin{equation}
@@ -151,7 +160,7 @@
         \end{align}
         As both terms integrate to finite solutions, $x(t)$ is absolutely integrable and therefore the system is BIBO-stable.
 
-    \section{{Problem 4}}
+    \section{Problem 4}
         A dynamical system with transfer function $G_s$, controlled by a PD controller with actuator and sensor transfer functions of $G_a = 1$ and $G_m = 1$ respectively, has a closed-loop transfer function, $G_{CL}$, of
         \begin{equation}
             G_{CL}(s) = \frac{K_C(1 + \tau_D s)G_s(s)}{1 + K_C (1 + \tau_D s) G_s(s)}.
@@ -170,5 +179,31 @@
         \begin{equation} \label{eq:offset}
             \text{Offset} = 1 - \frac{K_C G_s(0)}{1 + K_C G_s(0)}.
         \end{equation}
+    
+    \section{Problem 5}
+        A system with a rational transfer function, $G(s) = P(s) \ Q(s)$ is controlled by a P controller with gain $K$. The transfer functions of the actuator and the sensor are $G_a = 1$ and $G_m = 1$, respectively. The closed-loop transfer function,
+        \begin{equation}
+            G_{CL}(s) = \frac{KG(s)}{1 + KG(s)} = \frac{KP(s)}{Q(s) + KP(s)},
+        \end{equation}
+        has the characteristic polynomial $X(s) := Q(s) + KP(s)$ which has no roots with positive real parts and $X(0) \ne 0$. Suppose $K$ and $\omega$ be such that $Q(j \omega) + KP(j \omega) = 0$. 
+    \subsection{Part (i)}
+        The ultimate gain, $K_u$ is equal to $K$ because $K_u$ is defined as the maximum gain before the system becomes unstable and diverges. This means that $K_u$ produces sustained oscillations which is defined as $G_{CL} = 0$, hence, as $K$ is the gain that results in $Q(j \omega) + KP(j \omega) = 0$, $K_u = K$. Following from that, $\omega$ is the angular frequency at which the system equals $0$ and therefore as $\omega = 2 \pi / T$, $T_u = 2 \pi / \omega$.
+    \subsection{Part (ii)}
+        A dynamical system with the transfer function
+        \begin{equation}
+            G(s) = \frac{1}{(s + 1)^n},
+        \end{equation}
+        with $n \in \mathbb{N}, n \ge 3$. To determine the parameters of a PID controller using the Ziegler-Nichols ultimate sensitivity method, we start with the formulas in Table \ref{tb:znu_formulas}, taken from \cite[][Table 10.3]{sopaskis_2023_control}.
+        \begin{table}[h]
+            \centering
+            \begin{tabular}{ c | c | c }
+                $K_p$    & $\tau_I$ & $\tau_D$ \\
+                $0.6K_u$ & $T_u/2$  & $T_u/8$
+            \end{tabular}
+            \caption{Ziegler-Nichols ultimate sensitivity method tuning parameters.}
+            \label{tb:znu_formulas}
+        \end{table}
+        
+
     \printbibliography
 \end{document}

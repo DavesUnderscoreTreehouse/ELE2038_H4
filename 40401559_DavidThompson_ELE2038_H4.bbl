@@ -38,14 +38,13 @@
       \strng{authornamehash}{b36f19e3b8e827af35c51ffc516aa529}
       \strng{authorfullhash}{b36f19e3b8e827af35c51ffc516aa529}
       \strng{authorfullhashraw}{b36f19e3b8e827af35c51ffc516aa529}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{edition}{1.0.2-rc.6.}
       \field{title}{Control Systems: An introduction}
       \field{year}{2023}
-      \true{nocite}
     \endentry
   \enddatalist
 \endrefsection
